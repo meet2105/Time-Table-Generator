@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Meet\\Desktop\\Giriraj Practicle\\Dynamictimetable_app\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8906719F-9752-4A30-BF1E-D1EC001A9DFA}|Dynamictimetable_app.csproj|c:\\users\\meet\\desktop\\giriraj practicle\\dynamictimetable_app\\javascript\\default.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{8906719F-9752-4A30-BF1E-D1EC001A9DFA}|Dynamictimetable_app.csproj|solutionrelative:javascript\\default.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8906719F-9752-4A30-BF1E-D1EC001A9DFA}|Dynamictimetable_app.csproj|c:\\users\\meet\\desktop\\giriraj practicle\\dynamictimetable_app\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{8906719F-9752-4A30-BF1E-D1EC001A9DFA}|Dynamictimetable_app.csproj|solutionrelative:default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Users\\Meet\\Desktop\\Giriraj Practicle\\Dynamictimetable_app\\Default.aspx",
+              "RelativeDocumentMoniker": "Default.aspx",
+              "ToolTip": "C:\\Users\\Meet\\Desktop\\Giriraj Practicle\\Dynamictimetable_app\\Default.aspx",
+              "RelativeToolTip": "Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-25T09:58:06.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Default.js",
+              "DocumentMoniker": "C:\\Users\\Meet\\Desktop\\Giriraj Practicle\\Dynamictimetable_app\\Javascript\\Default.js",
+              "RelativeDocumentMoniker": "Javascript\\Default.js",
+              "ToolTip": "C:\\Users\\Meet\\Desktop\\Giriraj Practicle\\Dynamictimetable_app\\Javascript\\Default.js",
+              "RelativeToolTip": "Javascript\\Default.js",
+              "ViewState": "AgIAAD0AAAAAAAAAAAApwD8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-06-25T10:02:07.054Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

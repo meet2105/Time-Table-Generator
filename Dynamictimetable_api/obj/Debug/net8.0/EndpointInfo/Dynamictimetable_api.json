@@ -1,0 +1,150 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Dynamictimetable_api",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Default/getall": {
+      "post": {
+        "tags": [
+          "Default"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Default/Insertupdate": {
+      "post": {
+        "tags": [
+          "Default"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/En_Default"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/En_Default"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/En_Default"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Default/Insertupdate_details": {
+      "post": {
+        "tags": [
+          "Default"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Timetabledetaillist"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Timetabledetaillist"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Timetabledetaillist"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "En_Default": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "working_days": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "no_sub": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "total_sub": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "subjectdetails": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Timetabledetaillist": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "timetabledetail": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Timetabledetails"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Timetabledetails": {
+        "type": "object",
+        "properties": {
+          "receiptID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sub_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "total_hour": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

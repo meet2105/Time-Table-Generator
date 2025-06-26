@@ -1,0 +1,44 @@
+[
+  {
+    "ContainingType": "Dynamictimetable_api.Controllers.DefaultController",
+    "Method": "getall",
+    "RelativePath": "api/Default/getall",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Dynamictimetable_api.Controllers.DefaultController",
+    "Method": "Insertupdate",
+    "RelativePath": "api/Default/Insertupdate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objen",
+        "Type": "Dynamictimetable_api.En_Default",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Dynamictimetable_api.Controllers.DefaultController",
+    "Method": "Insertupdate_details",
+    "RelativePath": "api/Default/Insertupdate_details",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objen",
+        "Type": "Dynamictimetable_api.Timetabledetaillist",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

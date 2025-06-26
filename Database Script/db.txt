@@ -1,0 +1,134 @@
+                 ---------------------------------------------------------- create database------------------------------------------------------------------------------
+
+create database Timetable_Gen;
+GO
+use Timetable_Gen;
+Go
+
+----------------------------------------------------------------------- create Master Timetable table------------------------------------------------------------------------
+
+
+CREATE TABLE [dbo].[Mst_timetable](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Working_days] [int] NOT NULL,
+	[No_sub] [int] NOT NULL,
+	[Total_sub] [int] NOT NULL,
+ CONSTRAINT [PK_Mst_timetable] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+------------------------------------------------------------------- create Timetable_details table ---------------------------------------------------------------------------
+
+CREATE TABLE [dbo].[Timetable_details](
+	[ReceiptID] [int] IDENTITY(1,1) NOT NULL,
+	[Sub_name] [nvarchar](50) NULL,
+	[Total_hour] [int] NULL,
+ CONSTRAINT [PK_Timetable_details] PRIMARY KEY CLUSTERED 
+(
+	[ReceiptID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+------------------------------------------------------------------- create all stored procedure ------------------------------------------------------------------------------
+
+GO
+
+CREATE procedure Timetable_Getall    
+as    
+    
+begin    
+    
+select     
+ID,    
+Working_days,    
+No_sub,    
+Total_sub    
+from    
+Mst_timetable    
+    
+select     
+ReceiptID,    
+Sub_name,    
+Total_hour    
+from    
+Timetable_details    
+    
+end
+
+GO
+
+create procedure Timetable_Gen_InsertUpdate
+@id int,
+@Working_days int,
+@No_sub int,
+@Total_sub int
+
+as
+begin
+if exists(select ID from Mst_timetable)
+begin
+UPDATE [dbo].[Mst_timetable]
+   SET [Working_days] = @Working_days
+      ,[No_sub] = @No_sub
+      ,[Total_sub] = @Total_sub
+ WHERE id=@id
+ end
+ else
+begin
+INSERT INTO [dbo].[Mst_timetable]
+           ([Working_days]
+           ,[No_sub]
+           ,[Total_sub])
+     VALUES
+           (@Working_days
+           ,@No_sub
+           ,@Total_sub)
+end
+end
+
+
+GO
+
+CREATE procedure Timetable_details_InsertUpdate  
+@ReceiptID int,  
+@Sub_name nvarchar(50),  
+@Total_hour int  
+as  
+  
+if exists(select ReceiptID from Timetable_details where receiptid=@receiptid)  
+begin  
+  
+UPDATE [dbo].[Timetable_details]  
+   SET [Sub_name] = @Sub_name  
+      ,[Total_hour] = @Total_hour  
+  WHERE receiptid=@ReceiptID  
+end  
+else  
+begin  
+INSERT INTO [dbo].[Timetable_details]  
+           ([Sub_name]  
+           ,[Total_hour])  
+     VALUES  
+           (@Sub_name  
+           ,@Total_hour)  
+end  
+  
+
+GO
+
+CREATE procedure Timetable_details_Delete  
+as   
+begin  
+ delete from Timetable_details  
+end
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------- Now change connection string in appsetting.json file ....  ---------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
